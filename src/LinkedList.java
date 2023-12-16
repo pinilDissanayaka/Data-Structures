@@ -1,90 +1,87 @@
 class Node{
         int data;
         Node next;
+
         public Node(int data){
             this.data = data;
+            this.next = null;
         }
     }
 
 public class LinkedList {
     Node head;
-    
-    public Node add(int data){
+
+    public Node insert(int data){
         Node newNode = new Node(data);
-        if (head == null){
+    
+        if(head == null){
             head = newNode;
-            newNode.next = null;
-            return newNode;
         }else{
-            Node currNode = head;
+            Node currNode  = head;
             while(currNode.next != null){
                 currNode = currNode.next;
             }
-            currNode.next = newNode;
-            newNode.next = null;
-            return newNode;
+            currNode.next = newNode;  
         }
+        return newNode;
     }
-    public void printElement(){
+
+    public void print(){
         Node currNode = head;
         while (currNode != null) {
-            System.out.println("|");
-            System.out.println(currNode.data);
+            System.out.print(currNode.data + "--");
             currNode = currNode.next;
         }
     }
 
-    public void isertFront(LinkedList list, int data){
+    public void inserFront(int data){
         Node newNode = new Node(data);
-
-        if(list.head == null){
-            list.head = newNode;
-            newNode.next = null;
-        }else{
-            newNode.next = list.head;
-            list.head = newNode;
-        }
+        newNode.next = head;
+        head = newNode;
     }
 
-    public Node inserPoint(Node node, int data){
+    public void inserAfter(Node node, int data){
         Node newNode = new Node(data);
 
         if(node == null){
-            return null;
+            return;
         }else{
-            Node curNode = head;
-            while (curNode != node) {
-                curNode = curNode.next;
+            Node currNode = head;
+            while (currNode != node) {
+                currNode = currNode.next;
             }
+            newNode.next = currNode.next;
+            currNode.next = newNode;
+        }
 
-            newNode.next = curNode.next;
-            curNode.next = newNode;
-            return newNode;
+    }
+
+    public void deleteNode(Node node){
+        if(node == null){
+            return;
+        }else{
+            Node currNode = head;
+            while (currNode.next != node) {
+                currNode = currNode.next;
+            }
+            currNode.next = currNode.next.next;
         }
     }
-    public void insertPosition(int pos, int data){
-        Node newNode = new Node(data);
-        if(pos < 0){
-            return;
+
+    public void rotete(){
+        Node currNodePre = null;
+        Node currNode = head;
+        Node currNodeNext = null;
+
+        while (currNode != null) {
+            currNodeNext = currNode.next;
+            currNode.next = currNodePre;
+            currNodePre = currNode;
+            currNode = currNodeNext;
         }
-        else if (pos == 0) {
-            newNode.next = head;
-            head = newNode;
-        }else{
-            Node curNode = head;
-            int temp = 0;
-            while (temp != pos) {
-                if(curNode == null){
-                    return;
-                }
-                else{
-                    curNode = curNode.next;
-                    temp = temp +1;
-                }
-            }
-            newNode.next = curNode.next;
-            curNode.next = newNode;
-        }
+
+        head = currNode;
     }
 }
+
 
