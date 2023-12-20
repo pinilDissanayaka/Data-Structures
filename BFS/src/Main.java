@@ -1,20 +1,15 @@
 public class Main {
 
     public static void main(String[] args) {
-        AdjList adj = new AdjList(5);
+        int arr[] = {1, 10, 2, 5, 3};
 
-        adj.insertEd(0, 1);
-        adj.insertEd(1, 2);
-        adj.insertEd(2, 2);
-        adj.insertEd(3, 3);
-        adj.insertEd(2, 4);
-        adj.insertEd(3, 4);
-        adj.insertEd(4, 4);
-        adj.insertEd(2, 1);
-        adj.insertEd(4, 1);
-        adj.insertEd(2, 1);
+        Bubblesort b = new Bubblesort();
 
-        adj.BFS(1);
+        arr = b.bubbleSort(arr);
+
+        for(int i=0;i < arr.length;i++ ){
+            System.out.print(arr[i]+", ");
+        }
 
     }
     
