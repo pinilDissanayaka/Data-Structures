@@ -7,10 +7,9 @@ public class Main {
 
         arr = b.bubbleSort(arr);
 
-        for(int i=0;i < arr.length;i++ ){
-            System.out.print(arr[i]+", ");
-        }
+        BinarySearch bi = new BinarySearch();
 
+        System.out.println(bi.binarySearch(arr, 0, arr.length - 1, 10));
     }
     
 }
