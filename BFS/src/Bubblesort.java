@@ -1,4 +1,3 @@
-import java.math.*;
 public class Bubblesort {
 
     public int[] bubbleSort(int arr[]){
@@ -20,8 +19,7 @@ public class Bubblesort {
 }
 
 
-class BinarySearch {
-
+class BinarySearch{
     public int binarySearch(int arr[], int first,int last,int key){
         if(last >= first){
             int mid = Math.floorDiv((last + first), 2);
