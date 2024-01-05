@@ -1,9 +1,10 @@
 public class InsertionSort {
 
     public double[] insertionSort(double arr[]){
-        
+
         double temp;
         int j;
+
         for(int i = 1; i < arr.length; i++){
             temp = arr[i];
             j = i - 1;

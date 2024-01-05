@@ -20,7 +20,6 @@ public class AdjList {
     }
 
     public void BFS(int key){
-
         boolean visited[] = new boolean[vertices];
         int temp;
         visited[key] = true;
@@ -29,7 +28,6 @@ public class AdjList {
 
         while (queue.size() != 0) {
             temp = queue.poll();
-
             System.out.print(key);
 
             for(int i = 0; i < adjList[key].size(); i++){

@@ -8,7 +8,7 @@ public class Main {
         double sortedArr[] = i.insertionSort(arr);
 
         for(int k = 0; k< sortedArr.length; k++){
-            System.out.println(sortedArr[k]);
+            System.out.print(sortedArr[k] );
         }
     }
     
