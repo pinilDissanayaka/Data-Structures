@@ -15,7 +15,7 @@ class ArrayMethods {
     //deletion
     public int[] deletion(int arr[], int index){
         if(index < arr.length){
-            for(int i = index; i < arr.length; i++){
+            for(int i = index; i < arr.length -1; i++){
                 arr[i] = arr[i + 1];
             }
         }
