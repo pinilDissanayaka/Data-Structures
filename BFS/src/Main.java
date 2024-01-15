@@ -1,11 +1,11 @@
 public class Main {
 
     public static void main(String[] args) {
-        double arr[] = {1, 10, 2, 5, 3};
+        int arr[] = {1, 10, 2, 5, 3};
 
-        InsertionSort i = new InsertionSort();
+        ArrayMethods a = new ArrayMethods();
 
-        double sortedArr[] = i.insertionSort(arr);
+        int sortedArr[] = a.deletion(arr, 2);
 
         for(int k = 0; k< sortedArr.length; k++){
             System.out.print(sortedArr[k] );
