@@ -5,9 +5,9 @@ double AreaOfCircle(){
     double area;
     const double pi = 3.14159265358979323846264338;
     
-    printf("Enter the dimensions of Shape:");
+    printf("Enter the dimensions of Shape:\n");
     
-    printf("Enter radius for a circle : ");
+    printf("\tEnter radius for a circle : ");
     scanf("%lf", &radius);
     
     area = 2 * pi * radius * radius;
@@ -19,10 +19,10 @@ double AreaOfRectangle(){
     double width;
     double area;
 
-    printf("Enter the dimensions of Shape:");
-    printf("Enter length for a rectangle : ");
+    printf("Enter the dimensions of Shape:\n");
+    printf("\tEnter length for a rectangle : ");
     scanf("%lf", &length);
-    printf("Enter width for a rectangle : ");
+    printf("\tEnter width for a rectangle : ");
     scanf("%lf", &width);
     
     area = length * width;
@@ -34,10 +34,10 @@ double AreaOfTriangle(){
     double height;
     double area;
 
-    printf("Enter the dimensions of Shape:");
-    printf("Enter base for a circle : ");
+    printf("Enter the dimensions of Shape:\n");
+    printf("\tEnter base for a triangles : ");
     scanf("%lf", &base);
-    printf("Enter height for a circle : ");
+    printf("\tEnter height for a triangles : ");
     scanf("%lf", &height);
     
     area = base * height / 2;
