@@ -44,8 +44,5 @@ public class Balancedparantheses {
         }
 
         System.out.println("balanced");
-
-
     }
-    
 }

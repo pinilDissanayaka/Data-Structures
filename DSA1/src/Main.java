@@ -1,19 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        Bracket br = new Bracket();
 
-        list.insert(10);
-        list.insert(20);
-        list.insert(30);
-        list.insert(40);
-        list.insert(50);
+        char arr[] = {'{', '(', ')', '}'};
 
-        //list.print();
-        System.out.println();
+        br.match(arr);
 
-        list.rotete();
 
-        list.print();
     }
     
 }

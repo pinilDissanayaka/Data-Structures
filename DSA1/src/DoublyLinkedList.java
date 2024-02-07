@@ -1,7 +1,4 @@
-public class DoublyLinkedList {
-    Node head;
-
-    static class Node{
+class Node{
         int data;
         public Node prev;
         public Node next;
@@ -12,11 +9,18 @@ public class DoublyLinkedList {
             this.prev = next;
         }
     }
-    public void insert(int data){
+
+public class DoublyLinkedList{
+    Node head;
+
+
+
+    public Node insert(int data){
         Node newNode = new Node(data);
 
         if(head == null){
             head = newNode;
+            return newNode;
         }else{
             Node currNode = head;
             while (currNode.next != null) {
@@ -25,6 +29,7 @@ public class DoublyLinkedList {
             currNode.next = newNode;
             newNode.prev = currNode;
             newNode.next = null;
+            return newNode;
         }
 
     }
@@ -106,4 +111,5 @@ public class DoublyLinkedList {
             currNode.next.prev = currNode.prev;
         }
     }    
+
 }
