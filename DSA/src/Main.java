@@ -1,23 +1,21 @@
 public class Main {
-        public static void main(String[] args) {
-            Queue q = new Queue(5);
-            q.push(15);
-            q.push(16);
-            q.push(17);
-            q.push(18);
-            q.push(19);
+    public static void main(String[] args) {
+        DoublyLinkedList dlist = new DoublyLinkedList();
 
-            System.out.println(q.pop());
-            q.printQueque();
+        Node n1 = dlist.insert(10, 'A');
+        Node n2 = dlist.insert(20, 'B');
+        Node n3 = dlist.insert(30, 'C');
+        Node n4 = dlist.insert(40, 'D');
+        Node n5 = dlist.insert(50, 'E');
+        Node n6 = dlist.insert(60, 'F');
 
-            q.push(20);
-            System.out.println();
-            q.printQueque();
+        dlist.print();
+        System.out.println();
 
-
-
-
-
+        dlist.delete(n3);
+        dlist.print();
 
     }
+        
 }
+

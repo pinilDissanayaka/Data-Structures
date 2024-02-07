@@ -1,41 +1,79 @@
+public class QNode{
+    int data;
+    QNode next;
+
+    public QNode(int data){
+        this.data = data;
+        this.next = null;
+    }    
+}
 public class Queue {
-    private int top;
+    QNode front;
+    QNode rear;
 
-    private int arr[];
-
-    public Queue(int size){
-        this.top = -1;
-        arr = new int[size];
+    public Queue(){
+        this.front = null;
+        this.rear = null;
     }
 
-    public void push(int data){
-        if(top >= arr.length - 1){
-            System.out.println("Can not push.... Queue is full...");
+    public void enQueue(int data){
+        QNode newNode = new QNode(data);
+        if(front == null || rear == null){
+            newNode.next = null;
+            front = newNode;
+            rear = newNode;
+        }else{
+            QNode currNode = front;
+            while (currNode.next != null) {
+                currNode = currNode.next;
+            }
+            currNode.next = newNode;
+            rear = newNode;
+        }
+    }
+
+    public int deQueque(){
+        int deQuequeData;
+        if(front == null || rear == null){
+            System.out.println("Can not dequeue.. Queue is empty.. ");
+            return 0;
+        }else{
+            deQuequeData = front.data;
+            front = front.next;
+            return deQuequeData;
+        }
+    }
+
+    public int peek(){
+        int deQueuePeek;
+        if(front == null || rear == null){
+            System.out.println("Can not peek.. Queue is empty.. ");
+            return 0;
+        }else{
+            deQueuePeek = front.data;
+            return deQueuePeek;
+        }
+    }
+
+    public void print(){
+        if(front == null || rear == null){
+            System.out.println("Can not print.. Queue is empty.. ");
             return;
         }else{
-            top ++;
-            arr[top] = data;
+            QNode currNode = front;
+            while (currNode != null) {
+                System.out.print(currNode.data + "--->");
+                currNode = currNode.next;
+            }
         }
     }
 
-    public int pop(){
-        if(top == -1){
-            System.out.println("Cannot pop.. Queque is empty..");
-            return 0;
+    public boolean isEmpty(){
+        if(front == null || rear == null){
+            return true;
         }
         else{
-            int popEl = arr[0];
-            for(int i = 0; i < arr.length - 1; i++){
-                arr[i] = arr[i+1];
-            }
-            top --;
-            return popEl;
+            return false;
         }
-    }
-
-    public void printQueque(){
-        for(int i = 0; i <= top; i ++){
-            System.out.print(arr[i] + "-->");
-        }
-    }
+    }    
 }
